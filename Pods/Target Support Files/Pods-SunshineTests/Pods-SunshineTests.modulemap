@@ -1,0 +1,6 @@
+framework module Pods_SunshineTests {
+  umbrella header "Pods-SunshineTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
