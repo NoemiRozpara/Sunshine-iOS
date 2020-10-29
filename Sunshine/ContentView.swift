@@ -54,6 +54,9 @@ class CitiesSearchModel: ObservableObject {
         $query
             .debounce(for: 0.3, scheduler: RunLoop.main)
             .map { queryTerm in
+                if queryTerm.count < 3 {
+                    return []
+                }
                 return self.citiesToSearch.compactMap { (city: City) -> City? in
                     return city.name.contains(queryTerm)
                         ? city
